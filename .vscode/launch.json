@@ -9,6 +9,15 @@
             "type": "debugpy",
             "request": "attach",
             "processId": "${command:pickProcess}"
+        },
+        {
+            "name": "Debug Jupyter Notebook",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "internalConsole",
+            "redirectOutput": true,
+            "jupyter": true
         }
     ]
 }
