@@ -1,0 +1,22 @@
+In program_CSV_Imports.ipynb: 482 -> you have from time import time, but in block 6 you call time.sleep(2).  That will fail next because time is a function there, ot the tie module. 
+Additionally, at program_CSV_Imports.ipynb:496, you wrote driver.close without(), so it would not actually close the browser.
+
+If you want, I can give you the exact terminal commands and notebook code to fix the Selenium block for this container.  
+
+If you want, I can give you the exact terminal commands and notebook to fix the Selenium block for this code. 
+
+Checking what Chrome-family binaries are available in this container so I can give you a fix that matches the enviornment instead of a generic Selenium recipe. 
+
+
+There is no Chrome or Chromium binary installed, so the failure is exactly what Selenium reported.  I'm checking the available Ubuntu packages now so I can give you the shortest working install path.
+
+have concrete fix path: this container has sudo but no installable Chromium package, so the working route is to install Google Chrome and then update the Selenium cells to run headless in the container. 
+
+To print the output from that cell, add a print inside the loop right before writing: print([title, course ,credits]) csvRow.append([title, course, creidts]) writer.writerrow(csvRow)
+
+If you want a cleaner summary instead of every row, add a couter and print once at the end: row_count = 0 
+writer.writerow(csvRow) 
+row_count += 1
+print("Rows written;", row_count) 
+important note: if you meant execution count 15 ( not notebook cell 15), that corresponds to the Selenium driver cell and you can print page into the with. 
+print(driver.title)
